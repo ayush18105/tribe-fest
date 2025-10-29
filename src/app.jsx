@@ -5,6 +5,7 @@ import Home from "./pages/home";
 import Showcase from "./pages/showcase";
 import Volunteer from "./pages/volunteer";
 import Team from "./pages/team";
+import './index.css' 
 
 export default function App() {
   return (

@@ -1,6 +1,10 @@
 export default function Home() {
   return (
+    
     <div style={{ fontFamily: 'Arial, sans-serif' }}>
+      <div className="flex justify-center items-center h-screen bg-gray-100">
+      <h1 className="text-4xl font-bold text-blue-600">Hello Tailwind CSS!</h1>
+    </div>
       <section style={{ backgroundColor: '#f87171', color: 'white', padding: '60px 20px', textAlign: 'center' }}>
         <h1 style={{ fontSize: '48px', marginBottom: '20px' }}>Welcome to Tribe Fest</h1>
         <p style={{ fontSize: '20px', maxWidth: '700px', margin: '0 auto' }}>
