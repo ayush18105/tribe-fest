@@ -2,10 +2,21 @@
 module.exports = {
   content: [
     "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
+    "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        tribePurple: '#6800B0',
+        tribeGreen:  '#8CE04A',
+        tribeRed:    '#FF1E1E',
+        tribeYellow: '#FFD800',
+        tribeDark:   '#2A0F3F',
+      },
+      fontFamily: {
+        display: ['Impact','Inter','sans-serif'],
+      }
+    },
   },
   plugins: [],
 }

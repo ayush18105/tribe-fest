@@ -1,4 +1,327 @@
-@import "tailwindcss";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Rubik:wght@300;400;700;900&display=swap');
+
+:root{
+  --purple: #6C00B2;
+  --neon-green: #69FF42;
+  --red: #FF0000;
+  --cream: #FFF7DA;
+  --deep-purple: #5600D3;
+}
+
+/* global reset */
+html,body,#root{height:100%;margin:0;padding:0;}
+body{font-family:"Rubik",sans-serif;background:var(--purple);color:#fff;}
+
+/* ---------- HEADER exact sizing ---------- */
+.site-header{
+  width:100%;
+  background:var(--purple);
+  padding-top:18px;    /* small top gap */
+  padding-bottom:18px; /* small bottom gap */
+  box-sizing:border-box;
+}
+
+.site-header-inner{
+  max-width:1700px;
+  margin:0 auto;
+  padding-left:28px;
+  padding-right:28px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+/* logo */
+.site-logo{
+  width:170px;   /* exact width used in screenshot */
+  height:auto;
+  display:block;
+}
+
+/* nav container: thick red border rounded pill */
+.site-nav{
+  display:flex;
+  align-items:center;
+  gap:48px;                     /* spacing between nav links */
+  padding-left:56px;
+  padding-right:56px;
+  padding-top:14px;
+  padding-bottom:14px;
+  border:6px solid var(--red);  /* border thickness exact */
+  border-radius:9999px;
+  background:transparent;
+}
+
+/* nav links exact */
+.nav-link{
+  font-family:"Anton",sans-serif;
+  font-weight:900;
+  font-size:40px;               /* big nav font */
+  line-height:1;
+  text-decoration:none;
+  white-space:nowrap;
+}
+
+/* colors for links */
+.nav-link.red{ color: var(--red); }
+.nav-link.cyan{ color: #00B5D9; }
+
+/* login pill exact */
+.login-pill{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  background: #9DFF57;
+  color: #5A0090;
+  font-weight:900;
+  font-size:34px;
+  padding-left:40px;
+  padding-right:40px;
+  padding-top:12px;
+  padding-bottom:12px;
+  border-radius:9999px;
+  border:6px solid var(--deep-purple);
+  box-shadow: none;
+}
+
+.login-text{ letter-spacing:1px; }
+.login-icon{
+  display:inline-flex;
+  width:48px;
+  height:48px;
+  background:var(--deep-purple);
+  color:white;
+  border-radius:9999px;
+  align-items:center;
+  justify-content:center;
+  font-size:24px;
+  line-height:1;
+}
+
+/* ---------- HERO exact layout ---------- */
+.hero-section{
+  background:var(--purple);
+  width:100%;
+  box-sizing:border-box;
+}
+
+/* center container to align with header width */
+.hero-inner{
+  max-width:1400px;
+  margin:0 auto;
+  padding-left:36px;
+  padding-right:36px;
+  text-align:center;
+}
+
+/* YO! exact */
+.hero-yo{
+  font-family:"Anton",sans-serif;
+  font-size:140px;    /* exact */
+  font-weight:900;
+  color:var(--neon-green);
+  margin:0;
+  line-height:0.9;
+  margin-top:60px;    /* space between header and YO! */
+}
+
+/* First big line exact */
+.hero-line1{
+  margin:0;
+  margin-top:64px;   /* distance from YO! to first line */
+  font-family:"Anton",sans-serif;
+  font-size:95px;    /* exact */
+  font-weight:900;
+  line-height:0.95;
+  letter-spacing:-1px;
+}
+
+/* second big red line exact */
+.hero-line2{
+  margin:0;
+  margin-top:20px;   /* small gap between first and second line */
+  font-family:"Anton",sans-serif;
+  font-size:118px;   /* exact */
+  font-weight:900;
+  color:var(--red);
+  line-height:0.95;
+  letter-spacing:0.5px;
+}
+
+/* CTA spacing */
+.cta-wrap{ margin-top:140px; } /* exact spacing from second line to button */
+
+/* CTA button exact */
+.cta-button{
+  background:var(--red);
+  color:var(--cream);
+  font-family:"Anton",sans-serif;
+  font-size:65px;               /* exact */
+  font-weight:850;
+  padding-top:10px;             /* vertical */
+  padding-bottom:10px;
+  padding-left:165px;           /* horizontal */
+  padding-right:165px;
+  border-radius:50px;
+  margin-bottom: 60px;
+  margin-top: -40px;
+  border:none;
+  box-shadow: 0 60px 70px rgba(0,0,0,0.55);
+  cursor:pointer;
+}
+
+/* ---------- responsive tweaks (keep exact look but avoid overflow) ---------- */
+@media (max-width:1400px){
+  .site-header-inner{ max-width:1200px; }
+  .hero-inner{ max-width:1100px; padding-left:24px; padding-right:24px; }
+}
+
+@media (max-width:1100px){
+  .nav-link{ font-size:34px; }
+  .site-nav{ gap:30px; padding-left:28px; padding-right:28px; }
+  .hero-yo{ font-size:110px; margin-top:40px; }
+  .hero-line1{ font-size:72px; margin-top:36px; }
+  .hero-line2{ font-size:86px; margin-top:16px; }
+  .cta-button{ font-size:56px; padding-left:120px; padding-right:120px; padding-top:36px; padding-bottom:36px; }
+}
+
+@media (max-width:700px){
+  .site-header-inner{ padding-left:12px; padding-right:12px; }
+  .site-logo{ width:120px; }
+  .site-nav{ display:none; } /* hide nav on very small screens */
+  .login-pill{ padding-left:18px; padding-right:18px; font-size:18px; }
+  .hero-yo{ font-size:64px; margin-top:24px; }
+  .hero-line1{ font-size:28px; }
+  .hero-line2{ font-size:34px; }
+  .cta-button{ font-size:20px; padding-left:22px; padding-right:22px; padding-top:12px; padding-bottom:12px; }
+}
+/* =========== SHOWCASE (exact) =========== */
+.showcase-root { background:#9DFF57; } /* lime bg seen around panels */
+.showcase-inner {
+  max-width:1400px;
+  margin:0 auto;
+  padding:24px;
+  box-sizing:border-box;
+}
+
+/* Roof (slanted edges + main bar) */
+.roof-wrap { position:relative; margin-bottom:8px; }
+.roof-left-triangle {
+  position:absolute;
+  left:-80px;
+  top:0;
+  width:0;
+  height:0;
+  border-right:120px solid transparent;
+  border-bottom:140px solid #FF1414; /* red slanted left */
+  transform:skewX(-12deg);
+  z-index:2;
+}
+.roof-main {
+  background:#FF1414;
+  transform:skewX(-8deg);
+  padding:36px 20px;
+  box-shadow: 0 6px 0 rgba(0,0,0,0.25);
+  position:relative;
+  z-index:3;
+}
+.roof-line {
+  transform:skewX(8deg); /* cancel skew for text */
+  color:#fff;
+  font-family: "Anton", sans-serif;
+  font-weight:900;
+  font-size:64px;
+  text-align:center;
+  line-height:0.95;
+  letter-spacing:2px;
+}
+
+/* thin purple strip under roof */
+.roof-strip { height:8px; background:#5600D3; margin-top:-4px; z-index:4; }
+
+/* Panels container */
+.panel-wrap {
+  margin-top:8px;
+  border:4px solid #000;
+  display:flex;
+  background:#F9E93A; /* yellow panel */
+  position:relative;
+  box-shadow: 0 6px 0 rgba(0,0,0,0.15);
+}
+
+/* left and right panels */
+.panel-left, .panel-right {
+  flex:1;
+  min-height:300px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:48px;
+  box-sizing:border-box;
+  position:relative;
+}
+
+/* vertical divider */
+.panel-right { border-left:4px solid #000; }
+
+/* text inside panels */
+.panel-content { text-align:center; width:100%; }
+.small-title {
+  color:#5A00D8; /* purple */
+  font-weight:900;
+  font-size:28px;
+  letter-spacing:1px;
+  margin-bottom:12px;
+}
+.big-num {
+  color:#FF1414;
+  font-weight:900;
+  font-size:72px;
+  line-height:0.95;
+  margin-bottom:8px;
+}
+.foot-text {
+  color:#5A00D8;
+  font-weight:900;
+  font-size:22px;
+  margin-top:4px;
+}
+
+/* black outline bottom effect (like screenshot) */
+.panel-wrap::after{
+  content:"";
+  position:absolute;
+  left:0; right:0; bottom:-8px;
+  height:8px;
+  background:rgba(0,0,0,0.25);
+  pointer-events:none;
+}
+
+/* Character image (right) */
+.panel-character{
+  position:absolute;
+  right:-4cm;
+  bottom:-10px;
+  height:400px;
+  object-fit:contain;
+  z-index:5;
+  pointer-events:none;
+}
+
+/* RESPONSIVE ADJUSTMENTS */
+@media (max-width:1100px){
+  .roof-line { font-size:42px; }
+  .big-num { font-size:48px; }
+  .panel-character { height:240px; right:8px; bottom:-6px; }
+  .panel-left, .panel-right { padding:28px; min-height:220px; }
+}
+@media (max-width:700px){
+  .panel-wrap { flex-direction:column; }
+  .panel-right { border-left:none; border-top:4px solid #000; }
+  .panel-character { position:static; height:160px; margin-top:12px; }
+  .roof-left-triangle { display:none; }
+}

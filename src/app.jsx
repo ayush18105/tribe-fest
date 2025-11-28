@@ -1,23 +1,20 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Header from "./components/header";
-import Footer from "./components/footer";
-import Home from "./pages/home";
-import Showcase from "./pages/showcase";
-import Volunteer from "./pages/volunteer";
-import Team from "./pages/team";
-import './index.css' 
+// src/App.jsx
+import Header from "./components/Header";
+import Hero from "./components/hero";
+import Showcase from "./pages/showcase"; // <-- ensure this exact path
 
-export default function App() {
+function App() {
   return (
-    <Router>
+    <div className="w-full min-h-screen bg-[#6C00B2] overflow-x-hidden">
       <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/showcase" element={<Showcase />} />
-        <Route path="/volunteer" element={<Volunteer />} />
-        <Route path="/team" element={<Team />} />
-      </Routes>
-      <Footer />
-    </Router>
+      <Hero />
+
+      {/* show the showcase section we added */}
+      <section id="showcase">
+        <Showcase />
+      </section>
+    </div>
   );
 }
+
+export default App;
