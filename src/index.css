@@ -325,3 +325,16 @@ body{font-family:"Rubik",sans-serif;background:var(--purple);color:#fff;}
   .panel-character { position:static; height:160px; margin-top:12px; }
   .roof-left-triangle { display:none; }
 }
+/* Volunteer page extra tweaks */
+.volunteer-page h1 { font-family: "Anton", sans-serif; }
+.volunteer-page h2 { font-family: "Anton", sans-serif; }
+.volunteer-page p { font-family: "Rubik", sans-serif; }
+
+/* Make sure stacked colored borders are visible on wide screens */
+@media (min-width: 1024px) {
+  .volunteer-page .relative > .absolute { display:block; }
+}
+.text-\[48px\] {
+    font-size: 48px;
+    padding: 15px 25px;
+}
